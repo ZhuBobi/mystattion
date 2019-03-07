@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Them</title>
+    <th:block th:include="base :: header"/>
+    <style>
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <nav th:replace="base :: navbar"></nav>
+
+    <div th:replace="base :: netName"></div>
+
+    <div class="container  marketing">
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <div class="ih-item circle effect3 left_to_right">
+                    <a href="/them/getYangjing">
+                        <div class="img"><img src="/img/them/icon/JingYang.jpg" alt="img"></div>
+                        <div class="info">
+                            <h3>Jing Yang</h3>
+                            <p>一个肉长在脸上的女孩</p>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-top: 100px">
+                    <p>我爱哭便哭，想笑就笑，只要一切出于自然。</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="ih-item circle effect3 left_to_right">
+                    <a href="/them/getYangBoInfo">
+                        <div class="img"><img src="/img/them/icon/BoYang.jpg" alt="img"></div>
+                        <div class="info">
+                            <h3>Bo Yang</h3>
+                            <p>没有我精致的蓝孩子</p>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-top: 100px;text-align: center">
+                    <p>（这位兄弟他没有个性签名）</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="ih-item circle effect3 left_to_right">
+                    <a href="/them/getPengYixuanInfo">
+                        <div class="img"><img src="/img/them/icon/YiXuanPeng.jpg" alt="img"></div>
+                        <div class="info">
+                            <h3>Yixuan Peng</h3>
+                            <p>一个不回家的孩子</p>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-top: 100px;text-align: center">
+                    <p>（这位兄弟他也没有个性签名）</p>
+                </div>
+            </div>
+        </div>
+        <hr style="margin-top: 40px">
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <div class="ih-item circle effect3 left_to_right">
+                    <a href="/them/getWangSenInfo">
+                        <div class="img"><img src="/img/them/icon/SenWang.jpg" alt="img"></div>
+                        <div class="info">
+                            <h3>Sen Wang</h3>
+                            <p>命中注定的程序员</p>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-top: 100px">
+                    <p>（这位兄弟他没有个性签名）</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="ih-item circle effect3 left_to_right">
+                    <a href="/them/getYangQiulinInfo">
+                        <div class="img"><img src="/img/them/icon/QiuLinYang.jpg" alt="img"></div>
+                        <div class="info">
+                            <h3>Qiulin<br>Yang</h3>
+                            <p>挖矿女孩</p>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-top: 100px;text-align: center">
+                    <p>（这个妹子她没有个性签名）</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="ih-item circle effect3 left_to_right">
+                    <a href="/them/getZhouXueInfo">
+                        <div class="img"><img src="/img/them/icon/XueZhou.jpg" alt="img"></div>
+                        <div class="info">
+                            <h3>Xue Zhou</h3>
+                            <p>一个当了妈的女子</p>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-top: 100px;text-align: center">
+                    <p>（这位母亲胖了一大圈）</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="base :: foot"></div>
+</div>
+</body>
+<script>
+    $(document).ready(function () {
+        $('.carousel').carousel({
+            interval: 3500
+        });
+        $('#index')[0].className = "nav-item";
+        $('#pastTimes')[0].className = "nav-item";
+        if($('#lovesickness')[0]){
+            $('#lovesickness')[0].className = "nav-item";
+        }
+        $('#memories')[0].className = "nav-item active";
+        $('#myblogs')[0].className = "nav-item";
+    })
+</script>
+</html>

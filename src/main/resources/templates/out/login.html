@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<meta name="_csrf" th:content="${_csrf.token}"/>-->
+    <!--<meta name="_csrf_header" th:content="${_csrf.headerName}"/>-->
+    <title>Login</title>
+    <!--<link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="/css/steal/default.css">-->
+    <!--必要样式-->
+    <link rel="stylesheet" type="text/css" href="/css/steal/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/mycss.css">
+    <!--<link type="text/css" rel="stylesheet" href="/css/mycss.css"/>-->
+    <script type="text/javascript" th:src="@{/js/common/jquery.js}"></script>
+    <script type="text/javascript" th:src="@{/js/steal/steal.js}"></script>
+    <!--<script type="text/javascript" th:src="@{/bootstrap/js/bootstrap.js}"></script>-->
+    <script type="text/javascript" th:src="@{/js/common/jquery-ui.js}"></script>
+    <style>
+        .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        @media (min-width: 576px) {
+            .container {
+                max-width: 540px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 720px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .container {
+                max-width: 960px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1140px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div style="margin-top: 40px"></div>
+<div class="container">
+    <div th:replace="base :: netName"></div>
+</div>
+<div class='login' id="login">
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+    <div id="login_title" class='login_title'>
+        <span>账号登录</span>
+    </div>
+    <div id="register_title" class='login_title register_fields' hidden>
+        <span>账号注册</span>
+    </div>
+    <div id="login_fields" class='login_fields'>
+        <div class='login_fields__user'>
+            <div class='icon'>
+                <img src='img/icon/user_icon_copy.png'>
+            </div>
+            <input placeholder='用户名' type='text' id="username" name="username">
+            <div class='validation'>
+                <img src='img/icon/tick.png'>
+            </div>
+            </input>
+        </div>
+        <div class='login_fields__password'>
+            <div class='icon'>
+                <img src='img/icon/lock_icon_copy.png'>
+            </div>
+            <input placeholder='密码' type='password' id="password" name="password">
+            <div class='validation'>
+                <img src='img/icon/tick.png'>
+            </div>
+        </div>
+        <div class='login_fields__submit'>
+            <button class="spin circle" onclick="login()">登录</button>
+            <div class='forgot'>
+                <a onclick="changeTo()">注册>></a>
+            </div>
+        </div>
+        <div class='login_fields__submit'>
+            <div class='forgot'>
+                <a id="forget" name="forget" onclick="">忘记密码?</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="register_fields" class="login_fields register_fields" hidden>
+        <div class='login_fields__user'>
+            <div class='icon'>
+                <img src='img/icon/user_icon_copy.png'>
+            </div>
+            <input placeholder='用户名' type='text' id="registername" name="registername">
+            <div class='validation'>
+                <img src='img/icon/tick.png'>
+            </div>
+            </input>
+        </div>
+        <div class='login_fields__password'>
+            <div class='icon'>
+                <img src='img/icon/lock_icon_copy.png'>
+            </div>
+            <input placeholder='密码' type='password' id="registerword" name="registerword">
+            <div class='validation'>
+                <img src='img/icon/tick.png'>
+            </div>
+        </div>
+        <div class='login_fields__password'>
+            <div class='icon'>
+                <img src='img/icon/lock_icon_copy.png'>
+            </div>
+            <input placeholder='请再一次输入密码' type='password' id="registerword2" name="registerword2">
+            <div class='validation'>
+                <img src='img/icon/tick.png'>
+            </div>
+        </div>
+        <div class='login_fields__user'>
+            <div class='icon'>
+                <img src='img/icon/user_icon_copy.png'>
+            </div>
+            <input placeholder='邀请码' type='text' id="invitecode" name="invitecode">
+            <div class='validation'>
+                <img src='img/icon/tick.png'>
+            </div>
+            </input>
+        </div>
+        <div class='login_fields__submit'>
+            <button id="register" class="spin circle" onclick="register()">注册</button>
+            <div class='forgot'>
+                <a id="back" name="back" onclick="back()"><<<<-back</a>
+            </div>
+        </div>
+    </div>
+
+    <div class='success' id="login_success">
+        <h2>认证成功</h2>
+        <p>欢迎回来</p>
+    </div>
+    <div class='fail' id="login_fail">
+        <h2>认证失败</h2>
+        <p>用户名或密码错误</p>
+    </div>
+    <div class='register_fields success' id="register_success">
+        <h2>注册成功</h2>
+        <p>欢迎加入</p>
+    </div>
+    <div class='register_fields fail' id="register_fail">
+        <h2>注册失败</h2>
+        <p id="registerMsg"></p>
+    </div>
+</div>
+<div class='authent' id="authent">
+    <img src='img/icon/puff.svg'>
+    <p>认证中...</p>
+</div>
+<div class='authent' id="making">
+    <img src='img/icon/puff.svg'>
+    <p>注册中...</p>
+</div>
+</body>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var o = document.getElementById("css_div");
+        o.addEventListener("webkitAnimationEnd", function () {
+            $('.span_hide_txt').fadeIn();
+        });
+        if ($(window).width() < 1830 || $(window).width() > 1890) {
+            document.getElementsByClassName('div_title')[0].style.display = 'none';
+        }
+    });
+
+    function login() {
+        $('.login').addClass('test');
+        setTimeout(function () {
+            $('.login').addClass('testtwo');
+        }, 300);
+        setTimeout(function () {//认证中--出来
+            $('#authent').show().animate({right: -320}, {
+                easing: 'easeOutQuint',
+                duration: 600,
+                queue: false
+            });
+            $('#authent').animate({opacity: 1}, {
+                duration: 200,
+                queue: false
+            }).addClass('visible');
+        }, 500);
+        $.ajax({
+            url: "/dologin",
+            type: "POST",
+            dataType: "json",
+            async: false,
+            data: {username: $("#username").val(), password: $("#password").val()},
+            success: function (data) {
+                setTimeout(function () {//认证中--消失
+                    $('#authent').show().animate({right: 90}, {
+                        easing: 'easeOutQuint',
+                        duration: 600,
+                        queue: false
+                    });
+                    $('#authent').animate({opacity: 0}, {
+                        duration: 200,
+                        queue: false
+                    }).addClass('visible');
+                    $('.login').removeClass('testtwo');
+                    setTimeout(function () {
+                        $('.login').removeClass('test');
+                        $('.login div').fadeOut(123);
+                        if (data.status) {
+                            setTimeout(function () {
+                                $('#login_success').fadeIn();
+                            }, 200);
+                            setTimeout(function () {
+                                window.location = "/loginMid";
+                            }, 1000);
+                        }
+                        else {
+                            setTimeout(function () {
+                                $('#login_fail').fadeIn();
+                            }, 200);
+                            setTimeout(function () {
+                                window.location.reload();
+                            }, 2000);
+                        }
+                    }, 300);
+                }, 1400);
+            }
+        });
+    };
+
+    function changeTo() {
+        document.getElementById('login').className += ' turnround';
+        setTimeout(function () {
+            document.getElementById("login_fields").style.display = "none";
+            document.getElementById("login_title").style.display = "none";
+            $('.register_fields').show();
+            document.getElementById("register_fail").style.display = "none";
+            document.getElementById("register_success").style.display = "none";
+        }, 200);
+    }
+
+    function back() {
+        document.getElementById('login').className = 'login';
+        setTimeout(function () {
+            document.getElementById("register_fields").style.display = "none";
+            document.getElementById("register_title").style.display = "none";
+            $('#login_fields').show();
+            $('#login_title').show();
+        }, 300);
+    }
+
+    function register() {
+        document.getElementById('login').className += ' test1';
+        setTimeout(function () {
+            $('.login').addClass('testtwo');
+        }, 300);
+        setTimeout(function () {//认证中--出来
+            $('#making').show().animate({right: -320}, {
+                easing: 'easeOutQuint',
+                duration: 600,
+                queue: false
+            });
+            $('#making').animate({opacity: 1}, {
+                duration: 200,
+                queue: false
+            }).addClass('visible');
+        }, 500);
+        $.ajax({
+            url: "/register",
+            type: "POST",
+            dataType: "json",
+            async: false,
+            data: {
+                registername: $("#registername").val(), registerword: $("#registerword").val(),
+                registerword2: $("#registerword2").val(), invitecode: $("#invitecode").val()
+            },
+            success: function (data) {
+                setTimeout(function () {//认证中--消失
+                    $('#making').show().animate({right: 90}, {
+                        easing: 'easeOutQuint',
+                        duration: 600,
+                        queue: false
+                    });
+                    $('#making').animate({opacity: 0}, {
+                        duration: 200,
+                        queue: false
+                    }).addClass('visible');
+                    $('.login').removeClass('testtwo');
+                    setTimeout(function () {
+                        $('.login').removeClass('test1');
+                        $('.login div').fadeOut(123);
+                        if (data.status) {
+                            setTimeout(function () {
+                                $('#register_success').fadeIn();
+                            }, 200);
+                            setTimeout(function () {
+                                window.location = "/login";
+                            }, 1000);
+                        }
+                        else {
+                            setTimeout(function () {
+                                $('#register_fail').fadeIn();
+                                $('#registerMsg')[0].innerText = data.message;
+                            }, 200);
+                            setTimeout(function () {
+                                window.location.reload();
+                            }, 2000);
+                        }
+                    }, 300);
+                }, 1400);
+            }
+        });
+
+    }
+
+    $('input[type="text"],input[type="password"]').focus(function () {
+        $(this).prev().animate({'opacity': '1'}, 200);
+    });
+    $('input[type="text"],input[type="password"]').blur(function () {
+        $(this).prev().animate({'opacity': '.5'}, 200);
+    });
+    $('input[type="text"],input[type="password"]').keyup(function () {
+        if ($(this).val() != '') {
+            $(this).next().animate({
+                'opacity': '1',
+                'right': '30'
+            }, 200);
+        } else {
+            $(this).next().animate({
+                'opacity': '0',
+                'right': '20'
+            }, 200);
+        }
+    });
+
+</script>
+
+</html>

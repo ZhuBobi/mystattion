@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>blogs</title>
+    <th:block th:include="base :: header"/>
+</head>
+<body>
+<div class="container">
+    <nav th:replace="base :: navbar"></nav>
+
+    <!--<div th:replace="base :: netName"></div>-->
+
+    <div class="row justify-content-md-center" style="margin-top: 25px">
+        <h1 class="font-kai">博 客</h1>
+    </div>
+    <div class="row justify-content-md-center" style="margin-top: 100px">
+        <div class="accordion" style="width: 100%" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            《时间简史》
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+
+                        <div class="accordion" style="width: 100%" id="black-hole">
+                            <div class="card">
+                                <div class="card-header" id="time">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#time_1" aria-expanded="false" aria-controls="time_1">
+                                            时 间
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="time_1" class="collapse" aria-labelledby="time" data-parent="#black-hole">
+                                    <div class="card-body">
+                                        公认的，在宇宙大爆炸之前，是处于永恒的一种状态。而在大爆炸发生时，时间有了开始。在地球上的人看来，时间长度是不变的，
+                                        一秒无论在哪里都是一秒。这种观念，在引力大小差异不明显时是正确的，但是一旦进入了引力较大的地方，时间流逝的速度会减慢。
+                                        就像星际穿越之中那样，主人公驾驶飞船到了一个重力远大于地球的星球，仅待了不到哦一天，回到飞船上时，已经过去了好多年。
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header" id="blackhole">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#blackhole_1" aria-expanded="false" aria-controls="blackhole_1">
+                                            黑 洞
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="blackhole_1" class="collapse" aria-labelledby="blackhole" data-parent="#black-hole">
+                                    <div class="card-body">
+                                        黑洞并不是真的黑,也许它非常白?我们所能看到的一切物体的颜色均是其表面手光照反射出来的颜色。但是黑洞不一样，他太叼了，
+                                        吸引力之大，使得光都逃不出来，所以称之为黑洞。黑洞的中心，存在一个奇点，在这个点，重力无限大，质量无限大，密度无限大，
+                                        和宇宙大爆炸前的点一致。黑洞是如何被发现的呢?是科学家通过万有引力计算出来,有一部分星体运行轨迹被未知(无法用眼观测到)的东西所影响。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Collapsible Group Item #2
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+
+    11111111111111111
+
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Collapsible Group Item #3
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div th:replace="base :: foot"></div>
+</div>
+</body>
+<script>
+    $(document).ready(function () {
+        $('.carousel').carousel({
+            interval: 3500
+        });
+        $('#index')[0].className = "nav-item";
+        if($('#lovesickness')[0]){
+            $('#lovesickness')[0].className = "nav-item";
+        }
+        if($('#pastTimes')[0]){
+            $('#pastTimes')[0].className = "nav-item";
+        }
+        $('#character')[0].className = "nav-item";
+        $('#myblogs')[0].className = "nav-item active";
+    })
+</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>相思</title>
+    <th:block th:include="base :: header"/>
+</head>
+<body>
+<div class="container">
+    <nav th:replace="base :: navbar"></nav>
+
+    <div th:replace="base :: netName"></div>
+
+    <div class="row justify-content-md-center" style="margin-top: 100px">
+        <div class="col-lg-4 col-md-4 col-sm-4 text-center">
+            <p>红豆生南国,</p>
+            <p>春来发几枝。</p>
+            <p>愿君多采撷,</p>
+            <p>此物最相思.</p>
+        </div>
+    </div>
+</div>
+</body>
+
+<script>
+    $(document).ready(function () {
+        $('#index')[0].className = "nav-item";
+        if($('#pastTimes')[0]){
+            $('#pastTimes')[0].className = "nav-item";
+        };
+        $('#lovesickness')[0].className = "nav-item active";
+        $('#memories')[0].className = "nav-item";
+    })
+</script>
+</html>

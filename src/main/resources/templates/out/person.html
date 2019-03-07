@@ -1,0 +1,284 @@
+﻿<!--20171110 centos7上修改-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Zhu波比</title>
+    <meta name="keywords" content="Zhu波比，只会抄，不会写的后台程序员"/>
+    <link rel="shortcut icon" href="/img/icon.jpg"/>
+    <link type="text/css" rel="stylesheet" href="/css/button.css"/>
+    <link type="text/css" rel="stylesheet" href="/css/Location.css"/>
+    <link type="text/css" rel="stylesheet" href="/css/slid.css"/>
+    <link type="text/css" rel="stylesheet" href="/css/mycss.css"/>
+</head>
+<body style="overflow-x:hidden" class="body--ready" data-pinterest-extension-installed="cr1.39.1">
+<canvas height="100%" width="100%" style="z-index:-1;position: fixed; top: 0px; left: 0px; opacity: 1;" id="canvas"
+        class="canvas"></canvas>
+<div id="willerce">
+    <div>
+        <img src="/img/icon.jpg" id="logo" title="Bobi"/>
+        <h1>BobiZhu</h1>
+        <a>抄袭狂魔</a>
+    </div>
+    <div id="menu" class="menu" style="z-index: 11">
+        <a class="anniu" href="javascript:void(0)" onclick="enter()">Red</a>
+    </div>
+</div>
+<div id="shiping">
+    <video id="bfq" style="z-index: -2;">
+        <source id="mp4_sp">
+    </video>
+</div>
+<div id="more" class="theme left_more">
+    <div id="showIn_more" class="theme relative_title show_more">
+    </div>
+    <div id="more_detail" class="theme relative_info detail_more">
+        <div style="margin-left: 50px;margin-top: 50px">
+            <div>
+                <span class="to_continued">假使我年少弃世&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class="to_continued">请以绫罗绸缎覆我</span>
+            </div>
+            <div>
+                <span class="to_continued">葬我于嫣红芬芳的玫瑰花床</span>
+            </div>
+            <div>
+                <span class="to_continued">让黎明晨光伴我入河流</span>
+            </div>
+            <div>
+                <span class="to_continued">真情爱曲为我践行</span>
+            </div>
+            <div>
+                <span class="to_continued">犹如锋利快刀下的瞬息人生</span>
+            </div>
+            <div>
+                <span class="to_continued">好吧&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class="to_continued">我于世存也久</span>
+            </div>
+            <div>
+                <span class="to_continued">将衣裹纯白衣裳前往天国&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class="to_continued">面色宛如清冷小指上的戒指一样青紫</span>
+            </div>
+            <div>
+                <span class="to_continued">我未曾与任何人坠入爱恋</span>
+            </div>
+            <div>
+                <span class="to_continued">暖阳中紧握你的手&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class="to_continued">这感觉真的很美好</span>
+            </div>
+            <div>
+                <span class="to_continued">会有一个女孩对我说&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class="to_continued">她会永远的爱我</span>
+            </div>
+            <div>
+                <span class="to_continued">仅此      一生</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="them" class="theme left_them">
+    <div id="showIn_them" class="theme relative_title show_them">
+    </div>
+    <div id="them_detail" class="theme relative_info detail_them">
+        <div class="ih-item circle effect3 left_to_right">
+            <a href="/them/getZhouXueInfo">
+                <div class="img"><img src="/img/them/icon/XueZhou.jpg" alt="img"></div>
+                <div class="info">
+                    <h3>Xue Zhou</h3>
+                    <p>身怀六甲的雪妈</p>
+                </div>
+            </a>
+        </div>
+        <div class="ih-item circle effect3 left_to_right">
+            <a href="/them/getYangQiuLinInfo">
+                <div class="img"><img src="/img/them/icon/QiuLinYang.jpg" alt="img"></div>
+                <div class="info">
+                    <h3>QiuLin Yang</h3>
+                    <p>敬你是条汉子</p>
+                </div>
+            </a>
+        </div>
+        <div class="ih-item circle effect3 left_to_right">
+            <a href="/them/getWangSenInfo">
+                <div class="img"><img src="/img/them/icon/SenWang.jpg" alt="img"></div>
+                <div class="info">
+                    <h3>Sen Wang</h3>
+                    <p>他为么学技术可以这么快</p>
+                </div>
+            </a>
+        </div>
+        <div class="ih-item circle effect3 left_to_right">
+            <a href="/them/getPengYiXuanInfo">
+                <div class="img"><img src="/img/them/icon/YiXuanPeng.jpg" alt="img"></div>
+                <div class="info">
+                    <h3>YiXuan Peng</h3>
+                    <p>一个不回家的孩子</p>
+                </div>
+            </a>
+        </div>
+        <div class="ih-item circle effect3 left_to_right" style="margin-top: 30px">
+            <a href="/them/getYangBoInfo">
+                <div class="img"><img src="/img/them/icon/BoYang.jpg" alt="img"></div>
+                <div class="info">
+                    <h3>Bo Yang</h3>
+                    <p>没有我精致的蓝孩子</p>
+                </div>
+            </a>
+        </div>
+        <div class="ih-item circle effect3 left_to_right" style="margin-top: 50px">
+            <a href="/them/getYangJingInfo">
+                <div class="img"><img src="/img/them/icon/JingYang.jpg" alt="img"></div>
+                <div class="info">
+                    <h3>Jing Yang</h3>
+                    <p>一个肉长在脸上的女孩</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<div id="her" class="theme left_her">
+    <div id="showIn_her" class="theme show_her relative_title">
+        <p>Her</p>
+    </div>
+    <div id="her_detail" class="theme detail_her relative_info">
+
+    </div>
+</div>
+
+<div id="me" class="theme left_me">
+    <div id="showIn_me" class="theme show_me">
+    </div>
+    <div id="me_detail" class="theme detail_me">
+        <div id="me_she" class="she_back">
+        </div>
+    </div>
+</div>
+
+<div id="about" class="theme left_about">
+    <div id="showIn_about" class="theme show_about">
+    </div>
+    <div id="about_detail" class="theme detail_about">
+        <div class="about_info about_title">
+            <div class="div_span"><span class="hide_span" id="info_1">时</span></div>
+            <div class="div_span"><span class="hide_span" id="info_2">光</span></div>
+            <div class="div_span"><span class="hide_span" id="info_3">静</span></div>
+            <div class="div_span"><span class="hide_span" id="info_4">好</span></div>
+            <div class="div_span"></div>
+            <div class="div_span"><span class="hide_span" id="info_5">与</span></div>
+            <div class="div_span"><span class="hide_span" id="info_6">君</span></div>
+            <div class="div_span"><span class="hide_span" id="info_7">语</span></div>
+        </div>
+
+        <div class="about_info about_title">
+            <div class="div_span"></div>
+            <div class="div_span"><span class="hide_span" id="info_11">细</span></div>
+            <div class="div_span"><span class="hide_span" id="info_12">水</span></div>
+            <div class="div_span"><span class="hide_span" id="info_13">流</span></div>
+            <div class="div_span"><span class="hide_span" id="info_14">年</span></div>
+            <div class="div_span"></div>
+            <div class="div_span"><span class="hide_span" id="info_15">与</span></div>
+            <div class="div_span"><span class="hide_span" id="info_16">卿</span></div>
+            <div class="div_span"><span class="hide_span" id="info_17">同</span></div>
+        </div>
+    </div>
+</div>
+
+<span id="jb" class="copyright">&copy; 2017-2018<a href="http://www.cykhmily.red/"> 渝ICP备18010068号</a></span>
+</body>
+<script type="text/javascript" th:src="@{/js/common/jquery.js}"></script>
+<script src="/js/steal/Seffects.js" type="text/javascript"></script>
+<script>
+    function enter() {
+        $('#menu').fadeOut(100);
+        $('#willerce').fadeOut(100);
+        var nolists = document.getElementsByClassName('hide');
+        for (var i = 0; i < nolists.length; i++) {
+            nolists[i].style.display = 'block';
+        }
+        setTimeout(function () {
+            $("#more").css("margin-left", "0");
+            $("#them").css("margin-left", "3%");
+            $("#her").css("margin-left", "6%");
+            $("#me").css("margin-left", "9%");
+            $("#about").css("margin-left", "12%");
+        }, 200)
+    }
+
+    $('.div_span').hover(function () {
+        var childs = this.children;
+        for (var i = 0; i < childs.length; i++) {
+            $("#" + childs[i].id).fadeIn(500);
+        }
+    });
+
+    $('#more').hover(function () {
+        resetShe();
+        $("#them").css("margin-left", "88%");
+        $("#her").css("margin-left", "91%");
+        $("#me").css("margin-left", "94%");
+        $("#about").css("margin-left", "97%");
+    });
+    $('#them').hover(function () {
+        resetShe();
+        $("#them").css("margin-left", "3%");
+        $("#her").css("margin-left", "91%");
+        $("#me").css("margin-left", "94%");
+        $("#about").css("margin-left", "97%");
+    });
+    $('#her').hover(function () {
+        resetShe();
+        $("#more").css("margin-left", "0");
+        $("#them").css("margin-left", "3%");
+        $("#her").css("margin-left", "6%");
+        $("#me").css("margin-left", "94%");
+        $("#about").css("margin-left", "97%");
+    });
+    $('#me').hover(function () {
+        $("#them").css("margin-left", "3%");
+        $("#her").css("margin-left", "6%");
+        $("#me").css("margin-left", "9%");
+        $("#about").css("margin-left", "97%");
+        if ('50%' != $('#me_she')[0].style.marginLeft) return;
+        setTimeout(function () {
+            $('#me_she').fadeOut(1000);
+            setTimeout(function () {
+                $('#me_she').removeClass('she_back');
+                $('#me_she').fadeIn(1000);
+                setTimeout(function () {
+                    $('#me_she').fadeOut(1000);
+                    setTimeout(function () {
+                        $('#me_she')[0].style.marginLeft = '45%';
+                        $('#me_she').fadeIn(1000);
+                        setTimeout(function () {
+                            $('#me_she').fadeOut(1000);
+                            setTimeout(function () {
+                                $('#me_she')[0].style.marginLeft = '40%';
+                                $('#me_she').fadeIn(1000);
+                                setTimeout(function () {
+                                    $('#me_she').fadeOut(1000);
+                                }, 2000);
+                            }, 2000);
+                        }, 2000);
+                    }, 2000);
+                }, 2000);
+            }, 2000);
+        }, 2000);
+    });
+    $('#about').hover(function () {
+        resetShe();
+        $("#them").css("margin-left", "3%");
+        $("#her").css("margin-left", "6%");
+        $("#me").css("margin-left", "9%");
+        $("#about").css("margin-left", "12%");
+    });
+
+    function resetShe() {
+        $('#me_she').addClass('she_back');
+        $('#me_she')[0].style.marginLeft = '50%';
+        $('#me_she').fadeIn(1000);
+    }
+</script>
+</html>

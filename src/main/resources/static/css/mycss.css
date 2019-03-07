@@ -1,0 +1,317 @@
+@font-face {
+    color: white;
+    font-family: title;
+    src: url("/font/ITCBLKAD.TTF");
+}
+@font-face {
+    color: white;
+    font-family: about;
+    src: url("/font/STXINGKA.TTF");
+}
+
+
+@keyframes title_d {
+    from {left:0;top:0}
+    to{left:-23.4%;}
+}
+@-webkit-keyframes title_d {
+    from {left:0;top:0}
+    to{left:-23.4%;}
+}
+
+@keyframes title_y1 {
+    from {left:0;top:0}
+    to{left:-21%;}
+}
+@-webkit-keyframes title_y1 {
+    from {left:0;top:0}
+    to{left:-21%;}
+}
+
+@keyframes title_k {
+    from {left:0;top:0}
+    to{left:-15.6%;}
+}
+@-webkit-keyframes title_k {
+    from {left:0;top:0}
+    to{left:-15.6%;}
+}
+
+@keyframes title_h {
+    from {left:0;top:0}
+    to{left:-6.8%;}
+}
+@-webkit-keyframes title_h {
+    from {left:0;top:0}
+    to{left:-6.8%;}
+}
+
+@keyframes title_m {
+    from {left:0;top:0}
+    to{left:-0.9%;}
+}
+@-webkit-keyframes title_m {
+    from {left:0;top:0}
+    to{left:-0.9%;}
+}
+
+@keyframes title_i {
+    from {left:0;top:0}
+    to{left:7.3%;}
+}
+@-webkit-keyframes title_i {
+    from {left:0;top:0}
+    to{left:7.3%;}
+}
+
+@keyframes title_l {
+    from {left:0;top:0}
+    to{left:7.3%;}
+}
+@-webkit-keyframes title_l {
+    from {left:0;top:0}
+    to{left:7.3%;}
+}
+
+@keyframes title_y {
+    from {left:0;top:0}
+    to{left:14.3%;}
+}
+@-webkit-keyframes title_y {
+    from {left:0;top:0}
+    to{left:14.3%;}
+}
+
+@keyframes title_P {
+    from {left:0;top:0}
+    to{left:19.8%;}
+}
+@-webkit-keyframes title_P {
+    from {left:0;top:0}
+    to{left:19.8%;}
+}
+
+@keyframes title_red {
+    from {left:0;top:0}
+    to{left:19.8%;}
+}
+@-webkit-keyframes title_red {
+    from {left:0;top:0}
+    to{left:19.8%;}
+}
+
+.div_title {
+    display: inline-block;
+    height: auto;
+    animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    line-height: 1.3;
+    width: 100%;
+}
+
+.span_title {
+    font-family: title;
+    font-size: 100px;
+    animation: title_dev 2s;
+    -webkit-animation: title_dev 2s;
+    animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    animation-direction: normal;
+    position: relative;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+
+.span_title_d {
+    color: #a7bdb7;
+    font-family: title;
+    font-size: 100px;
+    animation-direction: normal;
+    position: relative;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation: title_d 2s;
+    -moz-animation: title_d 2s; /* Firefox */
+    -webkit-animation: title_d 2s; /* Safari 和 Chrome */
+    -o-animation: title_d 2s;
+    animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+}
+
+.span_title_y1 {
+    color: #a7bdb7;
+    font-family: title;
+    font-size: 100px;
+    animation-direction: normal;
+    position: relative;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation: title_y1 2s;
+    -moz-animation: title_y1 2s; /* Firefox */
+    -webkit-animation: title_y1 2s; /* Safari 和 Chrome */
+    -o-animation: title_y1 2s;
+    animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+}
+
+.span_title_k {
+    color: #a7bdb7;
+    font-family: title;
+    font-size: 100px;
+    animation-direction: normal;
+    position: relative;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation: title_k 2s;
+    -moz-animation: title_k 2s; /* Firefox */
+    -webkit-animation: title_k 2s; /* Safari 和 Chrome */
+    -o-animation: title_k 2s;
+    animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+}
+
+.span_title_h {
+    color: #a7bdb7;
+    font-family: title;
+    font-size: 100px;
+    animation-direction: normal;
+    position: relative;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation: title_h 2s;
+    -moz-animation: title_h 2s; /* Firefox */
+    -webkit-animation: title_h 2s; /* Safari 和 Chrome */
+    -o-animation: title_h 2s;
+    animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+}
+
+.span_title_m {
+    color: #a7bdb7;
+    font-family: title;
+    font-size: 100px;
+    animation-direction: normal;
+    position: relative;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation: title_m 2s;
+    -moz-animation: title_m 2s; /* Firefox */
+    -webkit-animation: title_m 2s; /* Safari 和 Chrome */
+    -o-animation: title_m 2s;
+    animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+}
+
+.span_title_i {
+    color: #a7bdb7;
+    font-family: title;
+    font-size: 100px;
+    animation-direction: normal;
+    position: relative;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation: title_i 2s;
+    -moz-animation: title_i 2s; /* Firefox */
+    -webkit-animation: title_i 2s; /* Safari 和 Chrome */
+    -o-animation: title_i 2s;
+    animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+}
+
+.span_title_l {
+    color: #a7bdb7;
+    font-family: title;
+    font-size: 100px;
+    animation-direction: normal;
+    position: relative;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation: title_l 2s;
+    -moz-animation: title_l 2s; /* Firefox */
+    -webkit-animation: title_l 2s; /* Safari 和 Chrome */
+    -o-animation: title_l 2s;
+    animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+}
+
+.span_title_y {
+    color: #a7bdb7;
+    font-family: title;
+    font-size: 100px;
+    animation-direction: normal;
+    position: relative;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation: title_y 2s;
+    -moz-animation: title_y 2s; /* Firefox */
+    -webkit-animation: title_y 2s; /* Safari 和 Chrome */
+    -o-animation: title_y 2s;
+    animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+}
+
+.span_title_P {
+    color: #a7bdb7;
+    font-family: title;
+    font-size: 100px;
+    animation-direction: normal;
+    position: relative;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation: title_P 2s;
+    -moz-animation: title_P 2s; /* Firefox */
+    -webkit-animation: title_P 2s; /* Safari 和 Chrome */
+    -o-animation: title_P 2s;
+    animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+}
+
+.span_title_red {
+    font-family: title;
+    font-size: 100px;
+    animation-direction: normal;
+    position: relative;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation: title_red 2s;
+    -moz-animation: title_red 2s; /* Firefox */
+    -webkit-animation: title_red 2s; /* Safari 和 Chrome */
+    -o-animation: title_red 2s;
+    animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+}
+
+.span_title_red {
+    color: #87111d;
+}
+
+.span_hide_txt {
+    height: auto;
+    font-family: title;
+    font-size: 80px;
+    display: none;
+}
+
+.about_info{
+    font-family: about;
+    font-size: 80px;
+}
+
+.nav-item{
+    width:auto;
+    margin-left:20px;
+}
+
+.navbar-brand{
+    margin-left:20%;
+}
+
+.featurette{
+    margin-top:100px;
+}
+
+.font-kai{
+    font-family: about;
+}
+
+

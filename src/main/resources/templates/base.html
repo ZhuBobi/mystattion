@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<th:block th:fragment="header">
+    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/css/mycss.css"/>
+    <link type="text/css" rel="stylesheet" href="/css/button.css"/>
+    <script type="text/javascript" th:src="@{/js/common/jquery.js}"></script>
+    <script type="text/javascript" th:src="@{/js/base.js}"></script>
+    <script type="text/javascript" th:src="@{/bootstrap/js/bootstrap.js}"></script>
+</th:block>
+
+
+<div th:fragment="netName" class="row" style="height: 130px;">
+    <div id="css_div" class="div_title" style="text-align: center;color:white;display: none">
+        <div class="span_title_d" style="display: inline-block">
+            <span class="span_title ">D</span><span class="span_hide_txt">o</span>
+        </div>
+        <div class="span_title_y1" style="display: inline-block">
+            <span class="span_title">y</span><span class="span_hide_txt">ou</span>
+        </div>
+        <div class="span_title_k" style="display: inline-block">
+            <span class="span_title">k</span><span class="span_hide_txt">now</span>
+        </div>
+        <div class="span_title_h" style="display: inline-block">
+            <span class="span_title">h</span><span class="span_hide_txt">ow</span>
+        </div>
+        <div class="span_title_m" style="display: inline-block">
+            <span class="span_title">m</span><span class="span_hide_txt">uch</span>
+        </div>
+        <div class="span_title_i" style="display: inline-block">
+            <span class="span_title">i</span>
+        </div>
+        <div class="span_title_l" style="display: inline-block">
+            <span class="span_title">l</span><span class="span_hide_txt">ove</span>
+        </div>
+        <div class="span_title_y" style="display: inline-block">
+            <span class="span_title">y</span><span class="span_hide_txt">ou</span>
+        </div>
+        <div class="span_title_P" style="display: inline-block">
+            <span class="span_title">,</span>
+        </div>
+        <div class="span_title_red" style="display: inline-block">
+            <span class="span_title">Red</span><span class="span_hide_txt">?</span>
+        </div>
+    </div>
+</div>
+
+<div th:fragment="navbar" style="height: 56px;width: 100%">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #142230;">
+        <a class="navbar-brand" href="/index">
+            <img th:src="@{/img/index/icon.png}"/>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active" id="index">
+                    <a class="nav-link" href="/index">Home</a>
+                </li>
+                <li class="nav-item" id="character">
+                    <a class="nav-link" href="/index/character">Character</a>
+                </li>
+                <li class="nav-item" id="pastTimes" sec:authorize="hasRole('ROLE_ADMIN')">
+                    <a class="nav-link" href="/index/pastTimes">Past</a>
+                </li>
+                <li class="nav-item" id="myblogs">
+                    <a class="nav-link" href="/index/myblogs">Blogs</a>
+                </li>
+                <li class="nav-item" id="lovesickness" sec:authorize="hasRole('ROLE_ADMIN')">
+                    <a class="nav-link disabled" href="/lovesickness">Lovesick</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="button"
+                        onclick="window.location.href='/login';">登陆 / 注册
+                </button>
+            </form>
+        </div>
+    </nav>
+</div>
+
+<footer th:fragment="foot" class="container py-5">
+    <hr>
+    <div class="row" style="margin-top:40px">
+        <div class="col-12 col-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                 class="d-block mb-2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="14.31" y1="8" x2="20.05" y2="17.94"></line>
+                <line x1="9.69" y1="8" x2="21.17" y2="8"></line>
+                <line x1="7.38" y1="12" x2="13.12" y2="2.06"></line>
+                <line x1="9.69" y1="16" x2="3.95" y2="6.06"></line>
+                <line x1="14.31" y1="16" x2="2.83" y2="16"></line>
+                <line x1="16.62" y1="12" x2="10.88" y2="21.94"></line>
+            </svg>
+            <small class="d-block mb-3 text-muted"><font style="vertical-align: inherit;"><font
+                    style="vertical-align: inherit;">©2017-2018</font></font></small>
+        </div>
+        <div class="col-6 col-md">
+            <h5><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Interesting</font></font></h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="/Stars"><span style="vertical-align: inherit;"><span
+                        style="vertical-align: inherit;">Stars</span></span></a></li>
+                <li><a class="text-muted" href="/Game"><span style="vertical-align: inherit;"><span
+                        style="vertical-align: inherit;">Games</span></span></a></li>
+                <li><a class="text-muted" href="/Poem"><span style="vertical-align: inherit;"><span
+                        style="vertical-align: inherit;">Poem</span></span></a></li>
+                <li><a class="text-muted" href="/Music"><span style="vertical-align: inherit;"><span
+                        style="vertical-align: inherit;">Music</span></span></a></li>
+                <li sec:authorize="hasRole('ROLE_ADMIN')"><a class="text-muted" href="/loved"><span style="vertical-align: inherit;"><span
+                        style="vertical-align: inherit;">Loved</span></span></a></li>
+                <li><a class="text-muted" href="/Newbee"><span style="vertical-align: inherit;"><span
+                        style="vertical-align: inherit;">New bee</span></span></a></li>
+            </ul>
+        </div>
+        <div class="col-6 col-md">
+            <h5><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">About</font></font></h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="/Me"><span style="vertical-align: inherit;"><span
+                        style="vertical-align: inherit;">Me</span></span></a></li>
+                <li><a class="text-muted" href="/You"><span style="vertical-align: inherit;"><span
+                        style="vertical-align: inherit;">You</span></span></a></li>
+                <li><a class="text-muted" href="/Them"><span style="vertical-align: inherit;"><span
+                        style="vertical-align: inherit;">Them</span></span></a></li>
+                <li><a class="text-muted" href="/Future"><span style="vertical-align: inherit;"><span
+                        style="vertical-align: inherit;">Future</span></span></a></li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript"  th:src="@{/js/canvas.js}"></script>
+</footer>
+</html>

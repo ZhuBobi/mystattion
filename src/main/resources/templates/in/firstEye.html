@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8">
+    <title>A glimpse of you!</title>
+</head>
+<style>
+    .div_img .deg_img {
+        width: 20%;
+        max-width: 20%;
+        height: 20%;
+        max-height: 20%;
+        border: 5px solid #c03806;
+        position: absolute;
+        font-weight: bold;
+        font-size: 15px;
+        padding: 25px;
+        float: left;
+        margin: 5px;
+        -webkit-transition: -webkit-transform 1s, opacity 1s, background 1s, width 1s, height 1s, font-size 1s;
+        -webkit-border-radius: 5px;
+        -o-transition-property: width, height, -o-transform, background, font-size, opacity;
+        -o-transition-duration: 1s, 1s, 1s, 1s, 1s, 1s;
+        -moz-transition-property: width, height, -o-transform, background, font-size, opacity;
+        -moz-transition-duration: 1s, 1s, 1s, 1s, 1s, 1s;
+        transition-property: width, height, transform, background, font-size, opacity;
+        transition-duration: 1s, 1s, 1s, 1s, 1s, 1s;
+        border-radius: 5%;
+        opacity: 0.1;
+        transition: all 1s;
+    }
+
+    .div_img:hover .deg_img:hover {
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+        opacity: 1;
+        border: 5px solid #c03572;
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        max-height: 100%;
+        border-radius: 10%;
+        font-size: 30px;
+    }
+
+    .div_img {
+        height: 300px;
+        width: 500px;
+    }
+
+</style>
+<link rel="stylesheet" type="text/css" href="/layui/css/layui.css">
+<link rel="stylesheet" type="text/css" href="/css/global.css">
+<script type="text/javascript" th:src="@{/js/common/jquery.js}"></script>
+<script type="text/javascript" th:src="@{/layui/layui.js}"></script>
+<body>
+<div class="layui-container">
+    <div class="layui-carousel" id="test1">
+        <div carousel-item>
+            <div>
+                <img src="/img/memory/4.png">
+            </div>
+            <div>
+                <img src="/img/memory/5.png">
+            </div>
+            <div>
+                <img src="/img/memory/6.png">
+            </div>
+            <div>
+                <img src="/img/memory/7.png">
+            </div>
+            <div>
+                <img src="/img/memory/8.png">
+            </div>
+        </div>
+    </div>
+    <div class="layui-row">
+        <div class="div_img layui-col-xs3	layui-col-sm3	layui-col-md3	layui-col-lg3">
+            <img class="deg_img" src="/img/memory/1.png"/>
+        </div>
+        <div class="div_img layui-col-xs3	layui-col-sm3	layui-col-md3	layui-col-lg3">
+            <img class="deg_img"  src="/img/memory/2.png"/>
+        </div>
+        <div class="div_img layui-col-xs3	layui-col-sm3	layui-col-md3	layui-col-lg3">
+            <img class="deg_img"  src="/img/memory/3.png"/>
+        </div>
+    </div>
+</div>
+<script>
+    layui.use('carousel', function(){
+        var carousel = layui.carousel;
+        //建造实例
+        carousel.render({
+            elem: '#test1'
+            ,width: '100%' //设置容器宽度
+            ,arrow: 'always' //始终显示箭头
+            //,anim: 'updown' //切换动画方式
+        });
+    });
+</script>
+</body>
+</html>

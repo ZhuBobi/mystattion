@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>过去</title>
+    <th:block th:include="base :: header"/>
+</head>
+<body>
+<div class="container">
+    <nav th:replace="base :: navbar"></nav>
+
+    <!--<div th:replace="base :: netName"></div>-->
+    <div class="row justify-content-md-center" style="margin-top: 25px">
+        <h1 class="font-kai">过 去</h1>
+    </div>
+
+    <div class="col-md-12">
+        <div class="VivaTimeline">
+            <dl>
+                <dt>2016年</dt>
+                <dd class="pos-left clearfix">
+                    <div class="circ"></div>
+                    <div class="time">5月 某日</div>
+                    <div class="events">
+                        <div class="events-header">微 信</div>
+                        <div class="events-body">
+                            <div class="row" style="display: block;">
+                                <div class="events-desc">
+                                    这是我记得最深刻的一件事情，5月8号就要开始实习，我5月7号下午才到成都，7号当天在微信群里边儿各种找人合租，
+                                    微信群里的人大多都说住蓝光，于是便想着找个人一起在蓝光住下，可找的几个人似乎都不太满意这边的条件。这让我
+                                    实习第一天还在找室友合租，万幸的是遇到了昊天，总算是如愿以偿的入住蓝光小区。
+                                    <p sec:authorize="hasRole('ROLE_ADMIN')"> 也是因为自己大学是一个挺自闭的人，我想在这里找到更多
+                                        其他地区院校的朋友，谁知道，大部门都是我校校友，甚至是老乡。哈哈，不知不觉距今已经快三年了。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </dd>
+                <dt>Feb 2016</dt>
+                <dd class="pos-right clearfix">
+                    <div class="circ"></div>
+                    <div class="time">某月 某日</div>
+                    <div class="events">
+                        <div class="events-header">鸭 脖</div>
+                        <div class="events-body">
+                            <div class="row" style="display: block;">
+                                <div class="events-desc">
+                                    鸭脖总说是我，舔着脸去找他搭话，说真的我已经记不太清了，或许是为了打英雄联盟？但是后来一想，这人这么菜，
+                                    配和我一起畅游峡谷吗,当然他不配，所以我对他所说的舔着脸找他打撸啊撸保留意见。这些事好像已经过去了很久。我现在
+                                    唯一能回忆起来的，就是现存在我脑海中唯一的画面就是那个拥挤的一楼会议室。填了密密麻麻的资料一大堆，燥热的
+                                    会议室似乎感受不到空调的那股清凉，只想着把窗户打开，让风带走一些热气。
+                                    <p sec:authorize="hasRole('ROLE_ADMIN')"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </dd>
+                <dd class="pos-left clearfix">
+                    <div class="circ"></div>
+                    <div class="time">某月 某日</div>
+                    <div class="events">
+                        <div class="events-header">静 静</div>
+                        <div class="events-body">
+                            <div class="row" style="display: block;">
+                                <div class="events-desc">
+                                    认识静静，算得上是一件幸事，我以为脱离大学宿舍以后就再也不会有互怼，互呛的日子了。感谢静静给了我这个机会
+                                    继续发挥才华。如此说来，还挺怀念，当初，我，昊天，鸭脖三人怼静静一人的场景。虽然三对一还落得个势均力敌的
+                                    局面。但此间乐趣，
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </dd>
+                <dt>Jan 2016</dt>
+                <dt>Dec 2015</dt>
+                <dt>Oct 2015</dt>
+                <dt>Sep 2015</dt>
+                <dd class="pos-right clearfix">
+                    <div class="circ"></div>
+                    <div class="time">05 2016</div>
+                    <div class="events">
+                        <div class="events-header">开始</div>
+                        <div class="events-body">
+                            <div class="row" style="display: block;">
+                                <div class="events-desc">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                                    deserunt mollit anim id est laborum.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </dd>
+            </dl>
+        </div>
+    </div>
+
+    <div th:replace="base :: foot"></div>
+</div>
+</body>
+<script>
+    $(document).ready(function () {
+        $('.carousel').carousel({
+            interval: 3500
+        });
+        $('#index')[0].className = "nav-item";
+        $('#pastTimes')[0].className = "nav-item active";
+        if($('#lovesickness')[0]){
+            $('#lovesickness')[0].className = "nav-item";
+        }
+        $('#character')[0].className = "nav-item";
+        $('#myblogs')[0].className = "nav-item";
+    })
+</script>
+</html>
