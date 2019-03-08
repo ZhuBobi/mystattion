@@ -61,13 +61,13 @@
                 <li class="nav-item active" id="index">
                     <a class="nav-link" href="/index">Home</a>
                 </li>
-                <li class="nav-item" id="character">
+                <li class="nav-item" id="character" sec:authorize="hasRole('ROLE_ADMIN')">
                     <a class="nav-link" href="/index/character">Character</a>
                 </li>
                 <li class="nav-item" id="pastTimes" sec:authorize="hasRole('ROLE_ADMIN')">
                     <a class="nav-link" href="/index/pastTimes">Past</a>
                 </li>
-                <li class="nav-item" id="myblogs">
+                <li class="nav-item" id="myblogs" sec:authorize="hasRole('ROLE_ADMIN')">
                     <a class="nav-link" href="/index/myblogs">Blogs</a>
                 </li>
                 <li class="nav-item" id="lovesickness" sec:authorize="hasRole('ROLE_ADMIN')">

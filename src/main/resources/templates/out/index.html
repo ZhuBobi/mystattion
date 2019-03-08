@@ -14,12 +14,13 @@
 
     <!--<div th:replace="base :: netName"></div>-->
 
-    <div class="row justify-content-md-center" style="margin-top: 25px">
-        <h1 class="font-kai">主 页</h1>
+    <div class="jumbotron" style="text-align: center">
+        <h1>欢迎来到</h1>
+        <h1>Zhu波比的网站</h1>
     </div>
 
     <!--轮播图---start-->
-    <div>
+    <div id="change">
         <div>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -58,7 +59,7 @@
     </div>
     <!--轮播图---end-->
 
-    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light" id="more">
         <div class="col-md-6 p-lg-6 mx-auto my-5">
             <h1 class="display-4 font-weight-normal">
                 团建历程
@@ -67,14 +68,109 @@
                 一路走来，不知不觉
             </p>
             <p>
-                已然两年有半，感谢让我遇见了这么优秀的你们
+                已然两年有半，三生有幸能够遇见这么优秀的你们
             </p>
-            <button id="goon" class="btn btn-outline-secondary">继续人生</button>
+            <button id="goon" class="btn btn-outline-secondary">浏览更多</button>
         </div>
     </div>
 
-    <hr class="hr_feature">
 
+    <div class="container  marketing" id="character-div" style="display: none">
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <div class="ih-item circle effect3 left_to_right">
+                    <a href="/them/getYangjing">
+                        <div class="img"><img src="/img/them/icon/JingYang.jpg" alt="img"></div>
+                        <div class="info">
+                            <h3>Jing Yang</h3>
+                            <p>一个肉长在脸上的女孩</p>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-top: 100px">
+                    <p>我爱哭便哭，想笑就笑，只要一切出于自然。</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="ih-item circle effect3 left_to_right">
+                    <a href="/them/getYangBoInfo">
+                        <div class="img"><img src="/img/them/icon/BoYang.jpg" alt="img"></div>
+                        <div class="info">
+                            <h3>Bo Yang</h3>
+                            <p>没有我精致的蓝孩子</p>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-top: 100px;text-align: center">
+                    <p>在离这很远的地方有一片海滩</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="ih-item circle effect3 left_to_right">
+                    <a href="/them/getPengYixuanInfo">
+                        <div class="img"><img src="/img/them/icon/YiXuanPeng.jpg" alt="img"></div>
+                        <div class="info">
+                            <h3>Yixuan Peng</h3>
+                            <p>一个不回家的孩子</p>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-top: 100px;text-align: center">
+                    <p>/lol/</p>
+                </div>
+            </div>
+        </div>
+        <hr style="margin-top: 40px">
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <div class="ih-item circle effect3 left_to_right">
+                    <a href="/them/getWangSenInfo">
+                        <div class="img"><img src="/img/them/icon/SenWang.jpg" alt="img"></div>
+                        <div class="info">
+                            <h3>Sen Wang</h3>
+                            <p>命中注定的程序员</p>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-top: 100px;text-align: center">
+                    <p>隔壁老王</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="ih-item circle effect3 left_to_right">
+                    <a href="/them/getYangQiulinInfo">
+                        <div class="img"><img src="/img/them/icon/QiuLinYang.jpg" alt="img"></div>
+                        <div class="info">
+                            <h3>Qiulin<br>Yang</h3>
+                            <p>挖矿女孩</p>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-top: 100px;text-align: center">
+                    <p>一个年轻的玲姨</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="ih-item circle effect3 left_to_right">
+                    <a href="/them/getZhouXueInfo">
+                        <div class="img"><img src="/img/them/icon/XueZhou.jpg" alt="img"></div>
+                        <div class="info">
+                            <h3>Xue Zhou</h3>
+                            <p>一个当了妈的女子</p>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-top: 100px;text-align: center">
+                    <p>雪姨</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="jumbotron" style="text-align: center">
+        <p>网站当前建设完成：13%</p>
+        <p><button class="btn btn-primary btn-lg" id="login" role="button">浏览更多</button></p>
+    </div>
 
 
     <div th:replace="base :: foot"></div>
@@ -260,5 +356,15 @@
             return this;
         }
     })(jQuery, window, document);
+    
+    
+    $('#goon').click(function () {
+        $('#more').fadeOut(100,function () {
+            $('#character-div').fadeIn()
+        });
+    });
+    $('#login').click(function () {
+        window.location ='/login';
+    })
 </script>
 </html>
