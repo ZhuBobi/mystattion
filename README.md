@@ -8,4 +8,4 @@
 3.后端使用了springboot，security4，mybatis，前端数据模板使用了thymleaf，
 数据库使用的mysql-5.7
 
-样例：http://cykhmily.red
+样例：http://cykhmily.red/index
